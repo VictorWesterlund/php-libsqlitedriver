@@ -1,0 +1,19 @@
+{
+    "name": "victorwesterlund/libsqlitedriver",
+    "description": "Abstraction library for common SQLite features",
+    "type": "library",
+    "license": "GPL-3.0-only",
+    "authors": [
+        {
+            "name": "Victor Westerlund",
+            "email": "victor.vesterlund@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "libsqlitedriver\\": "src/"
+        }
+    },
+    "require": {}
+}

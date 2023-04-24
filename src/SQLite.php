@@ -1,8 +1,8 @@
 <?php
 
-  namespace libsqlitedriver;
+ 	namespace libsqlitedriver;
 
-	class SQLite extends SQLite3 {
+	class SQLite extends \SQLite3 {
 		function __construct(string $db = ":memory:", string $init = null) {
 			$this->db_path = $db;
 
@@ -33,7 +33,7 @@
 		}
 
 		// Execute a prepared statement and SQLite3Result object
-		private function run_query(string $query, mixed $values = []): SQLite3Result|bool {
+		private function run_query(string $query, mixed $values = []): \SQLite3Result|bool {
 			$statement = $this->prepare($query);
 
 			// Format optional placeholder "?" with values

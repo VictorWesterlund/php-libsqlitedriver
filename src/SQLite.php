@@ -18,7 +18,7 @@
 
 				// Check write permissions of database
 				if (!is_writeable($path)) {
-					throw new Error("Permission denied: Can not write to directory '{$path}'");
+					throw new \Error("Permission denied: Can not write to directory '{$path}'");
 				}
 				
 				// Database doesn't exist and an init file as been provided

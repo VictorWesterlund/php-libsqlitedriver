@@ -59,6 +59,27 @@
 
 		/* ---- */
 
+		// Create comma separated list (CSV) from array
+		private static function csv(array $values): string {
+			return implode(",", $values);
+		}
+
+		// Create CSV from columns
+		public static function columns(array|string $columns): string {
+			return is_array($columns) 
+				? (__CLASS__)::csv($columns)
+				: $columns;
+		}
+
+		// Return CSV of '?' for use with prepared statements
+		public static function values(array|string $values): string {
+			return is_array($values) 
+				? (__CLASS__)::csv(array_fill(0, count($values), "?"))
+				: "?";
+		}
+
+		/* ---- */
+
 		// Get result as column indexed array
 		public function return_array(string $query, mixed $values = []): array {
 			$result = $this->run_query($query, $values);
